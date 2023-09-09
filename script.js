@@ -6,7 +6,10 @@ let withoutArticleArray = [];
 let map = {};
 
 for (let i = 0; i < touristSpots.length; i++) {
-  let wordWithoutArticle = touristSpots[i].replace(/\bthe\b/gi, "");
+  let wordWithoutArticle = touristSpots[i].replace(
+    /\bthe\b|\ban\b|\ba\b/gi,
+    ""
+  );
   wordWithoutArticle = wordWithoutArticle.trim();
   withoutArticleArray.push(wordWithoutArticle);
 
@@ -16,7 +19,7 @@ for (let i = 0; i < touristSpots.length; i++) {
 withoutArticleArray.sort();
 let ul = document.getElementById("bands");
 for (let i of withoutArticleArray) {
-  let li = document.createElement("li");
+  let li = document.createElement(li);
   li.innerHTML = map[i];
   ul.appendChild(li);
 }
