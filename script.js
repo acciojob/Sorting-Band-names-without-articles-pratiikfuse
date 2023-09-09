@@ -16,7 +16,7 @@ for (let i = 0; i < touristSpots.length; i++) {
 withoutArticleArray.sort();
 let ul = document.getElementById("bands");
 for (let i of withoutArticleArray) {
-  let li = document.createElement(li);
+  let li = document.createElement("li");
   li.innerHTML = map[i];
   ul.appendChild(li);
 }
